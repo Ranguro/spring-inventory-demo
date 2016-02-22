@@ -16,14 +16,12 @@ public class IndexController {
     protected final Log logger = LogFactory.getLog(IndexController.class);
 
 
-
     @RequestMapping("/")
-    String index(){
+    String index() {
 
         logger.info("Returning index view");
 
         return "index";
     }
-
 
 }

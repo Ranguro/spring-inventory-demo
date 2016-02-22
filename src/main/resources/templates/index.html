@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head lang="en">
-        <title>Spring Framework - Web Inventory</title>
+<head lang="en">
 
-        <link href=""
+    <title>Spring Framework Guru</title>
 
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
 
-
-
-    </head>
-
-    <body>
-    <h3>Products</h3>
-
-    <c:forEach items="${model.products}" var="prod">
-        <c:out value="${prod.description}"/> <i>$<c:out value="${prod.price}"/></i><br><br>
-    </c:forEach>
-    </body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+</div>
+</body>
 </html>
