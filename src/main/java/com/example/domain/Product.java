@@ -12,14 +12,13 @@ import javax.persistence.GeneratedValue;
 @Entity
 public class Product {
 
-
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
     private String description;
     private Double price;
 
-    protected Product() {
+    public Product() {
     }
 
     public Product(String description, Double price) {
