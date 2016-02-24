@@ -1,13 +1,31 @@
 package com.example.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+
 /**
  * Created by Randall on 19/02/2016.
  */
 
+@Entity
 public class Product {
 
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private long id;
     private String description;
     private Double price;
+
+    protected Product() {
+    }
+
+    public Product(String description, Double price) {
+        this.description = description;
+        this.price = price;
+    }
 
     public String getDescription() {
         return description;
