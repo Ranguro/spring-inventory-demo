@@ -28,6 +28,6 @@ public class ProductLoader implements ApplicationListener<ContextRefreshedEvent>
         ham.setDescription("1KG St. Charles Ham");
         ham.setPrice(13.99);
         productRepository.save(ham);
-        
+
     }
 }
