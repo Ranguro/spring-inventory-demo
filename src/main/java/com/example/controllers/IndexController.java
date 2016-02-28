@@ -18,9 +18,7 @@ public class IndexController {
 
     @RequestMapping("/")
     String index() {
-
         logger.info("Returning index view");
-
         return "index";
     }
 

@@ -1,6 +1,8 @@
 package com.example.services;
 
 import com.example.domain.Product;
+import com.example.repositories.ProductRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,17 +16,25 @@ public class ProductServiceImpl implements ProductService {
 
     private List<Product> products;
 
-    @Override
-    public List<Product> getProducts() {
-        return this.products;
+    private ProductRepository productRepository;
+
+    @Autowired
+    public void setProductRepository(ProductRepository productRepository) {
+        this.productRepository = productRepository;
     }
+
+    @Override
+    public Iterable<Product> listAllProducts() {
+        return productRepository.findAll();
+    }
+
 
     @Override
     public void increasePrice(int percentage) {
 
         if (products != null){
             for (Product product: products){
-                double newPrice = product.getPrice().doubleValue() * (100 + percentage)/100;
+                double newPrice = product.getPrice() * (100 + percentage)/100;
                 product.setPrice(newPrice);
             }
         }

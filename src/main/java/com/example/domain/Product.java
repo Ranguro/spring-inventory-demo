@@ -21,6 +21,14 @@ public class Product {
     public Product() {
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public Product(String description, Double price) {
         this.description = description;
         this.price = price;
